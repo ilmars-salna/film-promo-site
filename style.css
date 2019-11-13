@@ -1,0 +1,380 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER START */
+
+header{
+    height: 10vh;
+    width: 100vw;
+
+    position: fixed;
+    display:flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: #fff;
+    background: rgba(40, 40, 40, 0.5);
+}
+
+.title{
+    margin-left: 40px;
+    color: rgba(255,255,255,0.8);
+}
+
+.hamburger{
+    margin-right: 40px;
+    width: 50px;
+    height: 40px;
+    position: relative;
+
+    cursor: pointer;
+    transition: 1s;
+}
+
+.line{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    background: rgba(255,255,255,0.8);
+
+    transition: 1s;
+}
+
+.line:nth-child(1){
+    top: 0%;
+}
+
+.line:nth-child(2){
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.line:nth-child(3){
+    bottom: 0%;
+}
+
+/* Animate Burger */
+
+.burger-change{
+    /* transform-origin: center; By default */
+    transform:rotate(90deg);
+}
+
+.line-1-change{
+    /* Bring to center and rotate */
+    top: 50% !important;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.line-3-change{
+    /* Bring to center and rotate */
+    bottom: 50% !important;
+    transform: translate(0, 50%) rotate(-45deg);
+}
+
+.line-2-change{
+    opacity: 0;
+}
+
+/* HEADER END */
+
+/* NAV START */
+
+nav{
+    position: fixed;
+    margin-top: 10vh; 
+    width: 40vw;
+    height: 90vh;
+    background: rgba(40, 40, 40, 0.5);
+
+    left: 100vw;
+    transition: 1s;
+
+    /* Centers ul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+
+    /* Centers li's */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav ul li{
+    position: relative;
+    height: 10%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    transition: 0.5s;
+
+    /* Such that the transition does not disturb other li's */
+    position: absolute;
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+nav ul li a:hover{
+    font-size: 36px;
+}
+
+/* Animate NAV */
+
+.nav-change{
+    left: 60vw;
+}
+
+/* NAV END */
+
+/* SHOWCASE START */
+
+#showcase{
+    height: 100vh;
+    /* Background properties and values need adjustments */
+    background-image: url(./bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+    /* Centers everything in the section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+
+    color: #554333;
+}
+
+#showcase h1{
+    font-size: 50px;
+    padding: 10px;
+}
+
+#showcase p{
+    padding:10px 40px;
+    font-size: 24px;
+}
+
+#showcase .btn{
+    /* Adjustments needed for smaller devices (contrast) */
+    text-decoration: none;
+    font-size: 24px;
+    color: #554333;
+    padding: 10px 20px;
+    border: 1px solid #554333;
+
+    margin-top: 24px;
+}
+
+.btn:hover{
+    background: #554333;
+    color: white !important;
+}
+
+/* SHOWCASE END */
+
+/* ABOUT START */
+
+#about{
+    background: #554333;
+    color: #ccc;
+    padding: 50px 0;
+}
+
+#about h2{
+    text-align: center;
+    padding: 30px 0;
+    margin: auto;
+}
+
+#about h2 span{
+    font-weight: normal;
+    font-size: 18px;
+}
+
+#about p{
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 20px 40px;
+    max-width: 960px;
+    margin: auto;
+}
+
+/* ABOUT END */
+
+/* CAST START */
+
+#cast{
+    background: #181E1E;
+    color: #ccc;
+    padding: 50px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#cast ul{
+    list-style-type: none;
+}
+
+#cast ul li{
+    position: relative;
+    font-size: 20px;
+}
+
+#cast ul li:first-child{
+    left: -10%;
+}
+
+#cast ul li:last-child{
+    left: 10%;
+}
+
+/* CAST END */
+
+/* CREW START */
+
+#crew{
+    background:#554333;
+    color: #ccc;
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#crew .crew-sub{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#crew .crew-sub:last-child{
+    margin-bottom:0;
+}
+
+.crew-sub h3{
+    margin-bottom: 15px;
+}
+
+.crew-sub ul{
+    list-style-type: none;
+}
+
+.crew-sub ul li{
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* CREW END */
+
+/* PREMIERES START */
+
+#premiere{
+    background: #181E1E;
+    color: #ccc;
+    padding: 50px 0;
+}
+
+#premiere h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#premiere h1 span{
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#premiere .flex-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#premiere .flex-wrap .premiere-region{
+    text-align: center;
+}
+
+#premiere .flex-wrap .premiere-region h2{
+    margin-bottom: 15px;
+}
+
+#premiere .flex-wrap .premiere-region h3{
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+#premiere .flex-wrap .premiere-region a{
+    padding: 10px 20px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ccc;
+}
+
+#premiere .flex-wrap .premiere-region a:hover{
+    background: #ccc;
+    color: #181E1E;
+}
+
+/* PREMIERE END */
+
+/* FOOTER START */
+
+footer{
+    color: #ccc;
+    background: #554333;
+    padding: 50px 0;
+}
+
+.flex-wrap-2{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+
+    /* Adjustment below to be implemented for smaller width screens */
+    /* flex-wrap: wrap; */
+}
+
+footer ul{
+    list-style-type: none;
+
+    display: flex;
+    align-items: center;
+}
+
+footer ul li{
+    padding: 0 10px;
+}
+
+footer a{
+    color: #ccc;
+}
+
+footer p{
+    text-align: center;
+}
